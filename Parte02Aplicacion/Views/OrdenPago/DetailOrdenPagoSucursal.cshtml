@@ -1,0 +1,63 @@
+﻿@model Parte02Aplicacion.Models.OrdenPago
+
+@{
+    ViewBag.Title = "DetailOrdenPagoSucursal";
+}
+
+<h2>DetailOrdenPagoSucursal</h2>
+
+<div>
+    <h4>OrdenPago</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.IDOrdenPago, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.IDSucursal, new { htmlAttributes = new { @class = "form-control" } })
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IDOrdenPago)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDOrdenPago)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Monto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Monto)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Banco)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Banco)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sucursal)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sucursal)
+            </dd>
+
+        </dl>
+
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

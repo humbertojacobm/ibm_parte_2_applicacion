@@ -1,0 +1,66 @@
+﻿@model Parte02Aplicacion.Models.OrdenPago
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Está seguro de eliminar esta orden de pago?</h3>
+<div>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.IDOrdenPago, new { htmlAttributes = new { @class = "form-control" } })
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IDOrdenPago)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDOrdenPago)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Monto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Monto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaPago)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FechaPago)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Moneda)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Moneda)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Estado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Estado)
+            </dd>
+
+        </dl>
+
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Ir a Lista", "Index")
+        </div>
+    }
+</div>
